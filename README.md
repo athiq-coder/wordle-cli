@@ -1,13 +1,43 @@
-<h1> Wordle (CLI version) </h1>
-Original Wordle: https://www.nytimes.com/games/wordle
-<p> Wordle is a web-based word game created and developed by Welsh software engineer Josh Wardle, and owned and published by The New York Times Company since 2022.</p>
-In this project, I have created a very similar version of the game which executes right on your terminal as a Python program. 
+# infiniteWordleTr-Gui
+<div align="center">
+<img height="150" width="150" src="img.png"> </img>
+<br>
+</div>
 
-# Required Python packages
-- random <br>
-  See documentation <a href="https://docs.python.org/3/library/random.html">here.</a>
-  
-- colorama <br>
-  See documentation <a href="https://pypi.org/project/colorama/">here.</a>
-- enchant <br>
-  See documentation <a href="https://pypi.org/project/pyenchant/">here.</a>
+<div align="center">
+
+![ss](./ss.png)
+
+</div>
+
+## <div align="center"> [VIDEO](https://youtu.be/XWO-NevJsvw)</div> 
+<br>
+
+# Türkçe
+[Wordle](https://www.google.com/search?q=wordle)'ın kullanıcı arayüzlü masaüstü bir versiyonu.
+
+Uçbirim (terminal) versiyonu: [infiniteWordleTr](https://github.com/Mehmet-Emre-Dogan/infiniteWordleTr)
+
+## İp uçları
+- `words.json` dosyasını değiştirerek kelimelere ekleyip çıkartabilirsiniz.
+- [Unispace](https://www.dafont.com/unispace.font) fontunu yükleyerek karakterler arası eşit olmayan boşluk sorunundan kurtulabilirsiniz.
+- Nasıl font yüklenir: [video](https://youtu.be/7izh5QlSFjU)
+- Python ile çalıştırabilirsiniz veya derleyebilirsiniz: [video](https://youtu.be/GgczVoCF-6Q)
+- Oyun çok mu zor? [Hile](https://github.com/Mehmet-Emre-Dogan/wordleTrFraud) uygulamasını deneyin.
+
+# English
+A GUI based desktop implementation of [wordle](https://www.google.com/search?q=wordle).
+
+Terminal version: [infiniteWordleTr](https://github.com/Mehmet-Emre-Dogan/infiniteWordleTr)
+
+## Tips
+- You may edit the `words.json` to add or remove words
+- You may install [Unispace](https://www.dafont.com/unispace.font) font to get rid of uneven spacing between characters.
+- How to install fonts: [video](https://youtu.be/7izh5QlSFjU)
+- You may use Python directly or compile your version: [video](https://youtu.be/GgczVoCF-6Q)
+- Is game too hard? You may try [cheat](https://github.com/Mehmet-Emre-Dogan/wordleTrFraud) application.
+
+# Credits (Kaynakça)
+https://www.nytimes.com/games/wordle/index.html
+<br>
+https://www.bundle.app/wordle-tr/
