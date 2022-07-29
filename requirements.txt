@@ -1,1 +1,6 @@
-pyqt5
+numpy
+keras
+pygame
+tflearn
+tensorflow
+matplotlib
