@@ -41,8 +41,7 @@ def args():
                             action="store_true")
     return parser.parse_args()
 
-
-if __name__ == '__main__':
+def main():
     selected_game_model = random.choice(solvers)
     args = args()
     for game_model in game_models:
