@@ -5,3 +5,4 @@ Flask
 configparser
 requests
 streamlit
+opencv-python
