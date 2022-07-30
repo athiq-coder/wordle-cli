@@ -77,18 +77,22 @@ def run():
     st.set_page_config(layout = "wide")
     st.title("Upload and Download!")
     image_file_buffer = st.file_uploader("Upload your image", type=["jpg", "jpeg", 'png'])
-    size = st.text_input('Size', '300x300')
+    size_txt = st.text_input('Size', '300x300')
 
+    size_split = size_txt.split('x')
+    size_x = int (size_split[0])
+    size_y = int (size_split[1])
+    
     if image_file_buffer is not None:
         im = Image.open(image_file_buffer)
-        image = im.resize((300, 300))
+        image = im.resize((size_x, size_y))
 
         st.image(
             image, caption=f"Original Image", use_column_width=True
         )
 
         image = np.array(image)
-        
+
         if image.shape[2] > 3:
             isPNG = True
             output_extension = ".png"
