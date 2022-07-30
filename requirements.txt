@@ -6,3 +6,4 @@ configparser
 requests
 streamlit
 opencv-python
+pydaisi
