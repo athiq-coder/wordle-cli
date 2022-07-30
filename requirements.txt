@@ -4,3 +4,4 @@ Image
 Flask
 configparser
 requests
+streamlit
