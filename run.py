@@ -72,6 +72,7 @@ def download_button(object_to_download, download_filename, button_text, isPNG):
 
     
 def run():
+    st.set_page_config(layout = "wide")
     st.title("Upload and Download!")
     image_file_buffer = st.file_uploader("Upload your image", type=["jpg", "jpeg", 'png'])
 
@@ -92,3 +93,6 @@ def run():
         result = Image.fromarray(image)
         st.markdown(download_button(result,f"your_output_file{output_extension}", "Click me to download!!!", isPNG), unsafe_allow_html=True)
 
+
+if __name__ == "__main__":
+    run()
