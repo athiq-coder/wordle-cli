@@ -79,7 +79,7 @@ def run():
     size = st.text_input('Size', '300x300')
 
     if image_file_buffer is not None:
-        image_content = np.array(Image.open(image_file_buffer))
+        image_content = Image.open(image_file_buffer)
         image = resize_route(size, image_content)
 
         st.image(
