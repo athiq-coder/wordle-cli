@@ -81,12 +81,14 @@ def run():
 
     if image_file_buffer is not None:
         im = Image.open(image_file_buffer)
-        image = im.resize((500, 500))
+        image = im.resize((300, 300))
 
         st.image(
             image, caption=f"Original Image", use_column_width=True
         )
 
+        image = np.array(image)
+        
         if image.shape[2] > 3:
             isPNG = True
             output_extension = ".png"
