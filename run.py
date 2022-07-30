@@ -1,4 +1,4 @@
-from server import app
+
 import streamlit as st
 import numpy as np
 from PIL import Image
@@ -91,7 +91,3 @@ def run():
         result = Image.fromarray(image)
         st.markdown(download_button(result,f"your_output_file{output_extension}", "Click me to download!!!", isPNG), unsafe_allow_html=True)
 
-
-    app.run(
-        host='0.0.0.0'
-    )
