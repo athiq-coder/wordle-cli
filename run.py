@@ -79,8 +79,8 @@ def run():
     size = st.text_input('Size', '300x300')
 
     if image_file_buffer is not None:
-        new_image = resize_route(size, image_file_buffer)
-        image = np.array(Image.open(new_image))
+        image_content = np.array(Image.open(image_file_buffer))
+        image = resize_route(size, image_content)
 
         st.image(
             image, caption=f"Original Image", use_column_width=True
