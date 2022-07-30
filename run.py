@@ -9,6 +9,7 @@ from io import BytesIO
 import base64
 import uuid
 import re
+import io
 
 @st.cache
 def download_button(object_to_download, download_filename, button_text, isPNG):
@@ -79,8 +80,8 @@ def run():
     size = st.text_input('Size', '300x300')
 
     if image_file_buffer is not None:
-        image_content = Image.open(image_file_buffer)
-        image = resize_route(size, image_content)
+        im = Image.open(image_file_buffer)
+        image = im.resize((500, 500))
 
         st.image(
             image, caption=f"Original Image", use_column_width=True
