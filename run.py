@@ -1,4 +1,5 @@
 
+from server import resize_route
 import streamlit as st
 import pydaisi as pyd
 import numpy as np
@@ -75,9 +76,11 @@ def run():
     st.set_page_config(layout = "wide")
     st.title("Upload and Download!")
     image_file_buffer = st.file_uploader("Upload your image", type=["jpg", "jpeg", 'png'])
+    size = st.text_input('Size', '300x300')
 
     if image_file_buffer is not None:
-        image = np.array(Image.open(image_file_buffer))
+        new_image = resize_route(size, image_file_buffer)
+        image = np.array(Image.open(new_image))
 
         st.image(
             image, caption=f"Original Image", use_column_width=True

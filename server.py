@@ -102,41 +102,15 @@ def resize(size,image_content):
         img = img.resize((wsize, size[1]), Image.ANTIALIAS)
     return img
 
-# Routes
-@app.route('/resize', methods=['GET'])
-def resize_route():
-    use_default =int(request.args.get('use_default',1))
-    size=request.args.get('size','300x300')
-    crop_type=request.args.get('crop_type','middle')
-    crop = int(request.args.get('crop',1))
-    force_jpg = int(request.args.get('force_jpg', 0))
-    image_url = request.args.get('url')
-    
-    if not image_url:
-        return jsonify({'error' : 'missing param \'url\''}),400
-    
-    if get_domain_from_url(image_url) not in allowed_domains:
-        return jsonify({'error' : 'only images from allowed soruce should be used.'}),400
 
-    image = b''
-    if not is_downloadable(image_url):
-        if not use_default:
-            return jsonify({'error' : 'url does not have downloadable media'}),400
-        else:
-            with open('./no-image.jpg', 'rb') as defaultImage:
-                image = defaultImage.read()
-                content_type = 'image/jpeg'
-    if not image:
-        response = requests.get(image_url,stream=True,allow_redirects=True)
-        image = response.content
-        content_type = response.headers['Content-Type']
-
-    if 'image' in content_type:
-        image_type = content_type.split('/')[1]
-    else:
-        return jsonify({'error' : 'url does not have content type: image/*'}),400
+def resize_route(size, image):
+    use_default =1
+    crop_type='middle'
+    crop = 1
+    force_jpg = 0
     
-    if force_jpg and image_type not in ['gif']: image_type = 'jpeg'
+    image_type = 'jpeg'
+
     with BytesIO(image) as fp:
         desired_size = []
         desired_size.append(int(size.split("x")[0]))
@@ -149,10 +123,7 @@ def resize_route():
         print(image_type)
         resized_image.save(img,format=image_type,quality=85)
         img.seek(0)
-        return send_file(
-                img,
-                mimetype=content_type
-            )
+        return img
 
 @app.route('/', methods=['GET'])
 def root_route():
